@@ -246,6 +246,9 @@ void PylonBattery::handle_incoming_can_frame(CAN_frame rx_frame) {
 }
 
 void PylonBattery::transmit_can(unsigned long currentMillis) {
+  (void)currentMillis;
+  return;  // JM: passive Dyness monitor - do not transmit anything
+  
   // Send 1s CAN Message
   if (currentMillis - previousMillis1000 >= INTERVAL_1_S) {
     previousMillis1000 = currentMillis;
