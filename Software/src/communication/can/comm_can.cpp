@@ -690,7 +690,7 @@ static uint32_t init_native_can(CAN_Speed speed, gpio_num_t tx_pin, gpio_num_t r
 
   // Create a new settings object (as it does the bitrate calcs in the constructor)
   settingsespcan = new ACAN_ESP32_Settings((int)speed * 1000UL);
-  settingsespcan->mRequestedCANMode = ACAN_ESP32_Settings::NormalMode;
+  settingsespcan->mRequestedCANMode = ACAN_ESP32_Settings::ListenOnlyMode;
   settingsespcan->mTxPin = tx_pin;
   settingsespcan->mRxPin = rx_pin;
 
