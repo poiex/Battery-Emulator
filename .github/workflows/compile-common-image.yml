@@ -2,7 +2,7 @@ name: 🔋 Compile Common Images
 
 on:
   push:
-    branches: [main, jm-dyness-monitor]
+    branches: [main, jm-dyness-monitor, jm-dyness-monitor-t10-t21-fix]
   pull_request:
   workflow_call:
     inputs:
