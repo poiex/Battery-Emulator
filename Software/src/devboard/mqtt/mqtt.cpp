@@ -433,7 +433,7 @@ void set_battery_voltage_attributes(JsonDocument& doc, int i, int cellNumber, co
   doc["unit_of_measurement"] = "V";
   doc["suggested_display_precision"] = 3;
   doc["icon"] = "mdi:current-dc";
-  doc["value_template"] = "{{ value_json.cell_voltages[" + String(i) + "] }}";
+  doc["value_template"] = "{{ value_json.cell_voltages[" + String(i) + "] if value_json.cell_voltages is defined and (value_json.cell_voltages | count) > " + String(i) + " else none }}";
 }
 
 static String generateButtonTopic(const char* subtype) {
